@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi App de Hábitos</title>
     <!-- Agrega el enlace a Bootstrap CSS -->
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -100,15 +101,17 @@
 
 <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then((registration) => {
-            console.log('Service Worker registrado con éxito:', registration);
-          })
-          .catch((error) => {
-            console.log('Fallo al registrar el Service Worker:', error);
-          });
-      });
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker registrado con éxito'))
+                .catch((error) => console.log('Error al registrar el Service Worker:', error));
+        });
     }
-  </script>
+
+    // Detectar si el navegador admite manifest y la funcionalidad de "Add to Home Screen"
+    if ('manifest' in document.createElement('link')) {
+        const manifestLink = document.querySelector('link[rel="manifest"]');
+        manifestLink.href = '/manifest.json';
+    }
+</script>
 </html>
