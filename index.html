@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi App de Hábitos</title>
+    <!-- Agrega el enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Mi App de Hábitos</h1>
+        <div class="row">
+            <!-- Lista de hábitos -->
+            <div class="col-md-12" id="habitsListContainer">
+                <h2>Mis Hábitos</h2>
+                <div id="habitsList">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Hábito 1
+                            <span class="badge badge-success">30 días</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Hábito 2
+                            <span class="badge badge-success">30 días</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Hábito 3
+                            <span class="badge badge-success">30 días</span>
+                        </li>
+                        <!-- Agrega más hábitos aquí -->
+                    </ul>
+                </div>
+            </div>
+            <!-- Historial de días 
+            
+            
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Lu</th>
+                            <th>Ma</th>
+                            <th>Mi</th>
+                            <th>Ju</th>
+                            <th>Vi</th>
+                            <th>Sa</th>
+                            <th>Do</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-danger">No</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-danger">No</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-danger">No</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                            <td><span class="badge badge-success">Sí</span></td>
+                        </tr>
+
+                -->
+                        <!-- Agrega más filas para los otros días -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <a href="crear-habito.html" class="btn btn-primary float-right">Crear Nuevo Hábito</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agrega el enlace a Bootstrap JS (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registrado con éxito:', registration);
+          })
+          .catch((error) => {
+            console.log('Fallo al registrar el Service Worker:', error);
+          });
+      });
+    }
+  </script>
+</html>
