@@ -132,5 +132,25 @@ function initializeNotificationCheck() {
     }, 60000);
 }
 
+function requestNotificationPermission() {
+    if ("Notification" in window) {
+        Notification.requestPermission().then((result) => {
+            if (result === "granted") {
+                console.log("Permiso de notificación concedido");
+            } else if (result === "denied") {
+                console.log("Permiso de notificación denegado");
+            } else if (result === "default") {
+                console.log("El usuario cerró el diálogo sin tomar una decisión");
+            }
+        });
+    }
+}
+
+window.onload = function() {
+    requestNotificationPermission();
+    displayHabits();
+};
+
+
 // Cargar hábitos al iniciar la aplicación
 displayHabits();

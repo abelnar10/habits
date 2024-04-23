@@ -51,10 +51,8 @@
             let habits = JSON.parse(localStorage.getItem('habits')) || [];
             habits.push(habit);
             localStorage.setItem('habits', JSON.stringify(habits));
-
-            console.log("Hábitos guardados:", habits);
             // Redirección a index.html
-            window.location.href = 'index.html';
+            window.location.href = '/index.html';
         }
 
 
