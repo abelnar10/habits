@@ -31,14 +31,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Script personalizado -->
-    <script type="module" src="./js/crearHabito.js"></script>
-
     <!-- Script del formulario -->
     <script>
         const habitForm = document.getElementById('habitForm');
 
-        // crearHabito.js
         function guardarHabito(name, time) {
             const today = new Date();
             const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
@@ -57,6 +53,8 @@
             localStorage.setItem('habits', JSON.stringify(habits));
 
             console.log("Hábitos guardados:", habits);
+            // Redirección a index.html
+            window.location.href = 'index.html';
         }
 
 
@@ -70,9 +68,6 @@
 
             // Llama a la función saveHabit desde guardar.js
             guardarHabito(habitName, notificationTime);
-
-
-
             // Mostrar un mensaje de confirmación
         });
     </script>

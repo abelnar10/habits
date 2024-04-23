@@ -35,6 +35,8 @@
                     </ul>
                 </div>
             </div>
+
+
             <!-- Historial de días 
             
             
@@ -81,14 +83,15 @@
                         </tr>
 
                 -->
-                        <!-- Agrega más filas para los otros días -->
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-                <a href="crear-habito.html" class="btn btn-primary float-right">Crear Nuevo Hábito</a>
-            </div>
+            <!-- Agrega más filas para los otros días -->
+            </tbody>
+            </table>
         </div>
+        <div class="col-md-6">
+            <a href="crear-habito.html" class="btn btn-primary float-right">Crear Nuevo Hábito</a>
+
+        </div>
+    </div>
     </div>
 
     <!-- Agrega el enlace a Bootstrap JS (opcional) -->
@@ -99,19 +102,4 @@
 
 </body>
 
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(() => console.log('Service Worker registrado con éxito'))
-                .catch((error) => console.log('Error al registrar el Service Worker:', error));
-        });
-    }
-
-    // Detectar si el navegador admite manifest y la funcionalidad de "Add to Home Screen"
-    if ('manifest' in document.createElement('link')) {
-        const manifestLink = document.querySelector('link[rel="manifest"]');
-        manifestLink.href = '/manifest.json';
-    }
-</script>
 </html>
